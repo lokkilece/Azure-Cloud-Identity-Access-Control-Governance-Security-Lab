@@ -31,24 +31,23 @@ This project demonstrates end-to-end cloud identity management, access control, 
 
 ## Steps
 ### 1. Identity & Directory Structure
-Created accounts in MS Entra ID - Set up `Job Title`, `Department`, `Manager` and `Usage Location` for restricting access from other locations & set up hierarchy structure
+Created test accounts in MS Entra ID — configured `Job Title`, `Department`, `Manager`, and `Usage Location` to establish organizational hierarchy and metadata context
 
 <img width="500" alt="螢幕擷取畫面 2026-10-21 141557" src="https://github.com/user-attachments/assets/ca2f72ee-ea9d-4c1b-a6ff-930c1f9e128a" />
 
-After that, I set up Security Group for easier RBAC by dividing users into groups in Ms Entra ID - `Groups` - `Members`
+Set up Security Groups for RBAC by dividing users into groups in Ms Entra ID - `Groups` - `Members`
 <img width="500" alt="螢幕擷取畫面 2026-10-21 143014" src="https://github.com/user-attachments/assets/07389eee-1c45-4549-97b6-0275073950b1" />
 <img width="500" alt="螢幕擷取畫面 2026-10-21 181615" src="https://github.com/user-attachments/assets/1b654ff7-0108-44ed-8fcc-a8974265743e" />
 
 ### 2. Multi-Factor Authentication (MFA) & Conditional Security
-Since I do not have MS Entra ID P1/P2, Conditional Access is not available to me.
-In order to make sure MFA, I enabled MS security defaults in `Tenant Properties`
+Configured multi-factor authentication (MFA) security posture. Due to the absence of MS Entra ID P1/P2 licenses for Conditional Access, Security Defaults were enabled via `Tenant Properties` to enforce mandatory MFA across all user accounts.
 
 <img width="500" alt="螢幕擷取畫面 2026-10-21 151300" src="https://github.com/user-attachments/assets/53ceb30c-1fba-4f82-b985-0884577a9b87" />
 
 *Testing For MFA*
 
 ### 3. Azure RBAC & Access Isolation (Positive / Negative Testing)
-Created a storage account based in Canada as well as added tags for better organization
+Created a storage account based in Canada as well as applied resource Tags for proper asset organization and management
 <img width="500" alt="螢幕擷取畫面 2026-10-21 153001" src="https://github.com/user-attachments/assets/f8242558-a5e7-4309-9200-a571944edf13" />
 
 Assigned `Reader` to `SG-Finance`
@@ -64,7 +63,7 @@ Assigned `Reader` to `SG-Finance`
 <img width="500" alt="螢幕擷取畫面 2026-10-21 163024" src="https://github.com/user-attachments/assets/fbcdd45d-fd66-4baf-b5ad-9ae2ae21bf0f" />
 
 ### 4. Enterprise Governance with Azure Policy
-Implemented policy and allowing resources can be accessed in Canada to prevent unknown access from unknown locations
+Implemented Azure Policy to restrict resource deployment strictly to Canadian regions (`Canada Central`, `Canada East`), enforcing data residency compliance and preventing unauthorized out-of-region deployments
 
 <img width="500" alt="螢幕擷取畫面 2026-10-21 170901" src="https://github.com/user-attachments/assets/ab88652b-bdfd-4b74-adaf-15412ebdae9b" />
 
